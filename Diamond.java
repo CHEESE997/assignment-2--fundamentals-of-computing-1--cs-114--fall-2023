@@ -1,4 +1,3 @@
-//import
 import java.util.Scanner;
 
 public class Diamond {
@@ -6,13 +5,11 @@ public class Diamond {
 
     //Initialize times diamond is drawn
     int times =0;
+       //Input
     Scanner scan = new Scanner(System.in);
-    //Input number
     System.out.println("Please enter a number:");
     int size = scan.nextInt();
     //check if input is odd or even using mod
-
-    //if input is even using mod
     if((size%2)==0) {
       System.out.println("Your diamond is even");
       int half = (size/2);
@@ -34,13 +31,14 @@ public class Diamond {
         System.out.println();
         times++;
       }
-      //set times to half minus 2 for other half to decrease properly
+      //set times to half minus 1 for other half to decrease properly
       times = (half-1);
         while(times >= 1){
         //draws spaces draws, draws half the input, then decreases by 1 each time
         for(int spaces=(half-(times-1)) ; 0 <= spaces;spaces--){
           System.out.print("  ");
         }
+        //Draws asterisks will always draw an even amount of asterisks as input is form 0-x inclusive
         for(int astarisks = 1+((times-1)*2); 0 <= astarisks; astarisks--){
           System.out.print(" *");
         }
@@ -77,13 +75,13 @@ public class Diamond {
        //other half of the diamond, decreasing
       while(times >= 0){
         //draws spaces
-         for(int spaces=((halfup-times)) ; 0 < spaces;spaces--){
+        for(int spaces=((halfup-times)) ; 0 < spaces;spaces--){
           System.out.print(" ");
         }
         //draws astarisks
         for(int astarisks = 1+(times*2); 0 < astarisks; astarisks--){
           System.out.print("*");
-         }
+        }
         System.out.println();
         times--;
        }
